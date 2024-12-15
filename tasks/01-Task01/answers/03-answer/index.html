@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ShopSmart</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="product-gallery">
+            <div class="main-image">
+                <img id="mainImage" src="../../../../asset/images/car1.jpg" alt="Product Image">
+            </div>
+            <div class="thumbnails">
+                <img src="../../../../asset/images/car1.jpg" alt="Thumbnail 1" onclick="changeImage('../../../../asset/images/car1.jpg')">
+                <img src="../../../../asset/images/car2.jpg" alt="Thumbnail 2" onclick="changeImage('../../../../asset/images/car2.jpg')">
+                <img src="../../../../asset/images/car3.jpg" alt="Thumbnail 3" onclick="changeImage('../../../../asset/images/car3.jpg')">
+            </div>
+        </section>
+
+        <section class="product-details">
+            <h1>Product Name</h1>
+            <div class="price">$49.99</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt justo, sit amet dictum metus blandit ac. Vivamus in urna ut metus efficitur tincidunt.</p>
+            <div class="add-to-cart">
+                <button>Add to Cart</button>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <h2>Customer Reviews</h2>
+            <ul>
+                <li>
+                    <div class="user">John Doe</div>
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                    <div class="comment">Amazing product! Highly recommend.</div>
+                </li>
+                <li>
+                    <div class="user">Jane Smith</div>
+                    <div class="stars">
+                        ★★★★☆
+                    </div>
+                    <div class="comment">Good quality, worth the price.</div>
+                </li>
+                <li>
+                    <div class="user">Sam Wilson</div>
+                    <div class="stars">
+                        ★★★☆☆
+                    </div>
+                    <div class="comment">Not bad, but could be improved.</div>
+                </li>
+            </ul>
+        </section>
+        
+    </div>
+
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+        }
+    </script>
+</body>
+</html>
