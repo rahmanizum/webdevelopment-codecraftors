@@ -1,0 +1,17 @@
+const parentFunction = (person) => {
+let coins = 3;
+return () => {
+    coins--;
+    if (coins > 0) {
+        console.log(`${person} has ${coins} coins`) 
+    }
+    else {
+        console.log(`${person} is out of coins`)
+    }
+}
+}
+
+const son = parentFunction('Son')
+const daughter = parentFunction('Daughter')
+
+
