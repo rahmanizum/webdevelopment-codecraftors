@@ -6,7 +6,7 @@ let posts = [
 const list = document.getElementById('list');
 
 function createPost(post) {
-    return new Promis((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
             posts.push({...post, createdAt: new Date().getTime()});
             resolve(`Post ${post.title} created`);
