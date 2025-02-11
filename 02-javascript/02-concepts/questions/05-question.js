@@ -1,9 +1,6 @@
 console.log('start')
 
-const promisefun = () => (new Promise((resolve, reject) => {
-  console.log(1);
-  resolve('success')
-}))
+const promisefun = () => (new Promise((resolve, reject) => {console.log(1);resolve('success')}))
 
 
 console.log('middle')
