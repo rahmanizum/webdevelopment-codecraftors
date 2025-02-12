@@ -1,74 +1,50 @@
 
-// //examin the document object 
-console.dir(document);
+// EXAMINE THE DOCUMENT OBJECT
+console.log(document);
 
-// console.log(document.domain);
-// console.log(document.URL);
-// console.log(document.title);
-// console.log(typeof (title1));
-// document.title=1234;
-// console.log(document.doctype);
-// console.log(document.head);
-// console.log(typeof document.head);
-// console.log(document.all);
-// console.log(document.all[10]);
-// document.all[10].textContent='Hello';  -> not a goodway 
+// 1. getElementById - Returns a single element by ID
+const headerTitle = document.getElementById('header-title');
+const header = document.getElementById('main-header');
+console.log(headerTitle);
+headerTitle.textContent = 'Item Lister'; // Changes text content
+headerTitle.style.borderBottom = 'solid 3px #000'; // Add style
 
-// console.log(document.forms);
-// console.log(document.links);
+// 2. getElementsByClassName - Returns HTML Collection of elements
+const items = document.getElementsByClassName('list-group-item');
+console.log(items);
+items[1].textContent = 'Hello 2'; // Change second item
+items[1].style.fontWeight = 'bold';
+items[1].style.backgroundColor = 'yellow';
 
+// 3. getElementsByTagName - Returns HTML Collection of elements by tag name
+const li = document.getElementsByTagName('li');
+console.log(li);
+li[1].textContent = 'Hello 2';
+li[1].style.fontWeight = 'bold';
 
-// const headerT= document.getElementById('header-title');
-// const header= document.getElementById('main-header');
-// console.log(headerT);
-// // headerT.textContent='I am textContent';-- not conside style
-// // headerT.innerText='I am innertext'; --> conside the style
-//  headerT.innerHTML='I am innerHTML';
-//  header.style.border='solid 3px black';
+// 4. querySelector - Returns the first matching element
+const header2 = document.querySelector('#main-header');
+header2.style.borderBottom = 'solid 4px #ccc';
 
-//  //get elements by class name 
+const input = document.querySelector('input'); // Gets first input
+input.value = 'Hello World';
 
-//  const items=document.getElementsByClassName('list-group-item');
- 
-// //  items[1].textContent='hello  2';
-// //  items[1].style.fontWeight='bold';
-// //  items[1].style.backgroundColor='yellow';
+const submit = document.querySelector('input[type="submit"]');
+submit.value = 'SEND';
 
-//  for(const value of items){
-//     value.style.backgroundColor='#f4f4';
-//  }
+const firstItem = document.querySelector('.list-group-item');
+firstItem.style.color = 'red';
 
-//  //get element by tag name 
+// 5. querySelectorAll - Returns NodeList of all matching elements
+const titles = document.querySelectorAll('.title');
+console.log(titles);
+titles[0].textContent = 'Add Items List';
 
-//  const tags = document.getElementsByTagName('li');
-//  console.log(tags);
-//  for(const value of tags){
-//     value.style.fontWeight='bold';
-//  }
+const odd = document.querySelectorAll('li:nth-child(odd)');
+const even = document.querySelectorAll('li:nth-child(even)');
 
-//  const input = document.querySelector('input');
-//  input.value='Hello your world';
-
-//  const inputsubmit = document.querySelector('input[type="submit"]');
-//  console.log(inputsubmit);
-//  inputsubmit.style.backgroundColor='green';
-//  inputsubmit.classList.add('mt-3');
-
-
-//   //getting last item 
-
-//   lastItem= document.querySelector('.list-group-item:last-child');
-//   console.log(lastItem);
-//   lastItem.innerHTML="Last child"
-
-//   secondItem= document.querySelector('.list-group-item:nth-child(2)');
-//   console.log(secondItem);
-//   secondItem.innerHTML="Second Child"
-
-//   //select odd items 
-
-//   const odditems= document.querySelectorAll('li:nth-child(odd)');
-//   console.log(odditems);
-//   for(const value of odditems){
-//     value.style.color='red';
-//   }
+// Style odd and even items differently
+for(let i = 0; i < odd.length; i++) {
+    odd[i].style.backgroundColor = '#f4f4f4';
+    even[i].style.backgroundColor = '#ccc';
+}
