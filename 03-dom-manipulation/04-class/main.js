@@ -1,21 +1,16 @@
-console.dir(document);
-console.log(document);
+const btn = document.createElement('button');
+btn.className = 'btn btn-dark mt-2';
+btn.id = 'submi-btn';
+btn.setAttribute('title', 'Submit');
+const text = document.createTextNode('Submit');
+btn.appendChild(text);
 
-console.log(document.URL);
-console.log(document.title);
-console.log(typeof document.title);
-console.log(document.doctype);
-console.log(document.head);
-console.log(typeof document.head);
-console.log(document.forms);
-console.log(document.links);
+main_div = document.getElementById('main');
+main_div.appendChild(btn);
 
-console.log(document.domain);
-console.log(document.all);
-console.log(document.all[10]);
-
+var button = document.getElementById('submi-btn');
+button.addEventListener('click',()=>{
+    alert('Button Clicked');
+});
 
 
-console.log(window.location.hostname);
-console.log(document.getElementsByTagName('*')); 
-console.log(document.querySelector('#header-title')); 
