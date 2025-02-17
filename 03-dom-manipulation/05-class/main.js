@@ -29,10 +29,6 @@ function runEVent(e){
     console.log(`Event type: ${e.type}`);
 }
 
-
-
-
-
 button.addEventListener('click', buttonEvent);
 
 function buttonEvent(e){
