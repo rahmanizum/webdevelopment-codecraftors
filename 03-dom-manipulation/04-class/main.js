@@ -64,6 +64,7 @@ function mouseupHandler(){
     console.log('Button Mouse Up');
 }
 
+const box = document.querySelector('#box');
 
 box.addEventListener('mouseenter',mouseenterHandler);
 
@@ -90,10 +91,15 @@ function mouseoutHandler(){
     console.log('Mouse Out');
 }
 
-box.addEventListener('mousemove',mousemoveHandler);
+box.addEventListener('mousemove',mousemoveHandler2);
 
-function mousemoveHandler(e){
+function mousemoveHandler1(e){
     console.log(e.offsetX);
     console.log(e.offsetY);
 }
+
+function mousemoveHandler2(e){
+    box.style.backgroundColor = `rgb(${e.offsetX},${e.offsetY},${e.offsetX+e.offsetY})`;
+}
+
 
