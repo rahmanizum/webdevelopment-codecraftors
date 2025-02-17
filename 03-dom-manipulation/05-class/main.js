@@ -29,3 +29,11 @@ input.addEventListener('copy',runEVent);
 function runEVent(e){
     console.log(`Event type: ${e.type}`);
 }
+
+
+select = document.querySelector('select');
+select.addEventListener('change',changeEvent);
+
+function changeEvent(e){
+    console.log(`Option selected: ${e.target.value}`);
+}
