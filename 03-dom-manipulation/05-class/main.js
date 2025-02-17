@@ -19,3 +19,13 @@ function buttonEvent(e){
     items.appendChild(li);
 }
 
+input.addEventListener('focus',runEVent);
+input.addEventListener('blur',runEVent);
+input.addEventListener('cut',runEVent);
+input.addEventListener('paste',runEVent);
+input.addEventListener('copy',runEVent);
+
+
+function runEVent(e){
+    console.log(`Event type: ${e.type}`);
+}
