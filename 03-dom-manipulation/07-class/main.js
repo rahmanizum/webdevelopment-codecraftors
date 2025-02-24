@@ -1,6 +1,6 @@
-var form = document.getElementById('addForm');
-var itemList = document.getElementById('items');
-var filter = document.getElementById('filter');
+const form = document.getElementById('addForm');
+const itemList = document.getElementById('items');
+const filter = document.getElementById('filter');
 
 // Load items from local storage
 loadItems();
