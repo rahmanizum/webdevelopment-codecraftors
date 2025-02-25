@@ -11,7 +11,13 @@ const table2 = document.getElementById(`tablebody2`);
 const table3 = document.getElementById(`tablebody3`);
 // const tablefootData = document.getElementById(`tablefootdata`);
 
-const crud_base_url = 'https://crudcrud.com/api/862a413a8fa241e8958dd2cf130486a8'
+const crud_base_url = 'https://crudcrud.com/api/51739ad6505845e4a387eb3be96be2b1'
+
+
+submitButton.addEventListener('click',onSubmit);
+table1.addEventListener('click',onEditorDelete);
+table2.addEventListener('click',onEditorDelete);
+table3.addEventListener('click',onEditorDelete);
 
 // ON SUBMIT FUNCTION 
 async function onSubmit(e){
@@ -22,14 +28,12 @@ async function onSubmit(e){
         dishName : dish.value ,
         tableNo : table.value,
     }
-    console.log(JSON.stringify(dishdata));
 
 //add to server 
 
 await axios.post(`${crud_base_url}/dishdata`, { dishdata })
   .then((res) => {
     console.log(`${res.data.dishdata.dishName} added`);
-    console.log(res);
   })
   .catch((err) => {
     console.error(err);
@@ -37,9 +41,7 @@ await axios.post(`${crud_base_url}/dishdata`, { dishdata })
   //print on browser by get 
   axios.get(`${crud_base_url}/dishdata`)
   .then((res) => { 
-    console.log(`data feched for printing`);
     showOutput(res);
-    console.log(res);
   })
   .catch((err) => {
     console.error(err);
@@ -110,19 +112,12 @@ function showOutput(res){
 
 // PRINTING DATA WHEN CUSTOMER OPEN WEBSITE
 axios
-
 .get(`${crud_base_url}/dishdata`)
 .then((res) => { 
-  console.log(`!1 st time printing`);
   showOutput(res);
-  console.log(res);
 })
 .catch((err) => {
   console.error(err);
 });
 
 
-submitButton.addEventListener('click',onSubmit);
-table1.addEventListener('click',onEditorDelete);
-table2.addEventListener('click',onEditorDelete);
-table3.addEventListener('click',onEditorDelete);
